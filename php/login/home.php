@@ -12,7 +12,7 @@
     <title>Home Page</title>
 </head>
 <body>
-        <h1>Welcome Home!</h1>
+        <h1>Welcome Home! <?php echo $_SESSION['user']['username']?></h1>
         <a href="logout.php">Logout</a>
 </body>
 </html>
