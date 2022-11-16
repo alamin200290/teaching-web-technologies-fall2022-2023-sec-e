@@ -1,0 +1,16 @@
+#d1{
+    position: relative;
+    background-color: green;
+    width: 300px; 
+    height: 200px;
+}
+
+#d2{
+    position: absolute;
+    top: 50px;
+    left: 90px;
+    background-color: red;
+    width: 100px; 
+    height: 100px;
+    border-radius: 50px;
+}
