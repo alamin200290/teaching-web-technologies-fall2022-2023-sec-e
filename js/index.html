@@ -1,0 +1,36 @@
+<html>
+<head>
+    <title>JS Example</title>
+</head>
+<body>
+        <h1>This is test H1</h1>
+        <h1 id="h1">This is Test H2</h1>
+        <input type="text" name="name" id="name" value="" onkeyup="f1()" />
+        <input type="button" name="btn" id="btn" value="Click" onclick="f1()"/>
+
+    <script>
+        //name = "alamin";
+        //var name ="alamin";
+        // let name = "alamin";
+        // let student = [1, "alamin", '2.1'];
+        // student[0];
+
+        // function sum(a, b){
+        //     return a+b;
+        // }
+        // let f1 = function (a, b){
+        //     return a+b;
+        // }
+        // let f2 = (a,b)=>a+b;
+
+        //console.log('test ...');
+        //document.write("THIS is JS EXAMPLE");
+        let head = document.getElementsByTagName('h1')[0].innerHTML = "TEST";
+       
+        function f1(){
+            let name = document.getElementById('name').value;
+            document.getElementsByTagName('h1')[0].innerHTML = name;
+        }
+    </script>
+</body>
+</html>
