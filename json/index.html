@@ -1,0 +1,67 @@
+<html>
+<head>
+    <title>JS Example</title>
+</head>
+<body>
+        <h1>This is test H1</h1>
+        <h1 id="h1">This is Test H2</h1>
+        <input type="text" name="name" id="name" value=""  />
+        <input type="button" name="btn" id="btn" value="Click" onclick="ajax()"/>
+        <input type="button" name="btn" id="btn" value="test" onclick="alert('test')"/>
+
+    <script>
+        //name = "alamin";
+        //var name ="alamin";
+        // let name = "alamin";
+        // let student = [1, "alamin", '2.1'];
+        // student[0];
+
+        // function sum(a, b){
+        //     return a+b;
+        // }
+        // let f1 = function (a, b){
+        //     return a+b;
+        // }
+        // let f2 = (a,b)=>a+b;
+
+        //console.log('test ...');
+        //document.write("THIS is JS EXAMPLE");
+        let head = document.getElementsByTagName('h1')[0].innerHTML = "TEST";
+       
+        function f1(){
+            let name = document.getElementById('name').value;
+            document.getElementsByTagName('h1')[0].innerHTML = name;
+        }
+
+        function ajax(){
+
+            let name = document.getElementById('name').value;
+            let user = {    
+                        'id': '12',
+                        'name': name
+                    };
+            let data = JSON.stringify(user);
+
+            let xhttp = new XMLHttpRequest();
+            // xhttp.open('GET', 'nameCheck.php?name='+name, true);
+            // xhttp.send();
+            // xhttp.onreadystatechange = function (){
+            //     if(this.readyState == 4 && this.status == 200){
+            //         document.getElementsByTagName('h1')[0].innerHTML = this.responseText;
+            //     }
+            // }
+
+            xhttp.open('POST', 'nameCheck.php?', true);
+            xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+            xhttp.send('json='+data);
+            xhttp.onreadystatechange = function (){
+                if(this.readyState == 4 && this.status == 200){
+                    //let user = JSON.parse(this.responseText);
+                    //alert(user.id);
+                    document.getElementsByTagName('h1')[0].innerHTML = this.responseText;
+                }
+            }
+        }
+    </script>
+</body>
+</html>
